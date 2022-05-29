@@ -1,2 +1,2 @@
 # frames
-Plugin that allows you to bring your images to Minecraft.
+A bukkit plugin and library that allows you to bring your images to Minecraft.

@@ -65,6 +65,13 @@ public class DefaultFrameManager implements FrameManager {
 
   @Override
   public Frame getFrameByEntityId(Player player, int id) {
+    for (Frame frame : frames.values()) {
+      for (FramePart part : frame.getParts()) {
+        if (part.getId() == id) {
+          return frame;
+        }
+      }
+    }
     return null;
   }
 }

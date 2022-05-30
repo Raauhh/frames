@@ -1,0 +1,4 @@
+name: franes-plugin
+main: net.raauhh.frames.FramesPlugin
+author: Raauhh
+version: 1.0

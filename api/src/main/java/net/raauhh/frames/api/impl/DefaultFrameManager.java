@@ -5,7 +5,6 @@ import net.raauhh.frames.api.FrameManager;
 import net.raauhh.frames.api.FramePart;
 import net.raauhh.frames.api.util.Images;
 import net.raauhh.frames.api.util.Vector2D;
-import org.bukkit.entity.Player;
 import org.bukkit.map.MapPalette;
 
 import java.awt.image.BufferedImage;
@@ -47,10 +46,13 @@ public class DefaultFrameManager implements FrameManager {
       }
     }
 
-    return new DefaultFrame(
+    Frame frame = new DefaultFrame(
         id,
         frames
     );
+
+    this.frames.put(id, frame);
+    return frame;
   }
 
   @Override
@@ -64,7 +66,7 @@ public class DefaultFrameManager implements FrameManager {
   }
 
   @Override
-  public Frame getFrameByEntityId(Player player, int id) {
+  public Frame getFrameByEntityId(int id) {
     for (Frame frame : frames.values()) {
       for (FramePart part : frame.getParts()) {
         if (part.getId() == id) {

@@ -32,7 +32,6 @@ public class FrameViewRegistry_v1_8_R3 implements FrameViewRegistry {
     return added;
   }
 
-
   @Override
   public boolean unregister(Player player) {
     FrameEntityTrackerEntry entry = entries.get(player.getUniqueId());

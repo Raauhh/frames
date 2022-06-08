@@ -1,11 +1,14 @@
 package net.raauhh.frames.api.view;
 
-import org.bukkit.entity.Player;
+import java.util.Collection;
 
 public interface FrameViewRegistry {
 
-  boolean register(Player player, FrameView view);
+  boolean register(String id, FrameView view);
 
-  boolean unregister(Player player);
+  boolean unregister(String id);
 
+  FrameView getView(String id);
+
+  Collection<FrameView> getViews();
 }

@@ -45,12 +45,15 @@ public final class TrackerEntries {
     WorldServer worldServer = ((CraftWorld) world).getHandle();
     EntityTracker tracker = worldServer.tracker;
 
+    boolean removed = false;
     try {
       Set<EntityTrackerEntry> entries = (Set<EntityTrackerEntry>) ENTRIES_FIELD.get(tracker);
-      return entries.remove(entry);
-    } catch (IllegalAccessException e) {
-      return false;
+      removed = entries.remove(entry);
+    } catch (IllegalAccessException ignored) {
     }
+
+    entry.a();
+    return removed;
   }
 
 }

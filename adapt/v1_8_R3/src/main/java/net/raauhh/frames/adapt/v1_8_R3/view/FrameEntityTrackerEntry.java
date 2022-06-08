@@ -40,6 +40,10 @@ public class FrameEntityTrackerEntry extends EntityTrackerEntry {
   public void updatePlayer(EntityPlayer entityplayer) {
     if (!Chunks.isLoaded(entityplayer, view.getLocation())) {
       trackedPlayers.remove(entityplayer);
+      renderer.hide(
+          entityplayer.getBukkitEntity(),
+          view.getFrame()
+      );
       return;
     }
 

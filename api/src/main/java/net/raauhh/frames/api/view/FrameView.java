@@ -1,14 +1,15 @@
 package net.raauhh.frames.api.view;
 
 import net.raauhh.frames.api.Frame;
-
-import java.util.Collection;
-import java.util.UUID;
+import org.bukkit.Location;
+import org.bukkit.block.BlockFace;
 
 public interface FrameView {
 
   Frame getFrame();
 
-  Collection<UUID> getViewers();
+  Location getLocation();
+
+  BlockFace getFacing();
 
 }

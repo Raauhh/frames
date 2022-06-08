@@ -1,7 +1,5 @@
 package net.raauhh.frames.api;
 
-import org.bukkit.entity.Player;
-
 import java.awt.image.BufferedImage;
 import java.util.Collection;
 
@@ -57,13 +55,9 @@ public interface FrameManager {
    * Retrieves the frame that contains given
    * frame part id.
    *
-   * @param player - the player who is requesting the frame
-   * @param id     - the frame id
+   * @param id - the frame id
    * @return the frame who belongs given frame part id.
    */
-  Frame getFrameByEntityId(
-      Player player,
-      int id
-  );
+  Frame getFrameByEntityId(int id);
 
 }

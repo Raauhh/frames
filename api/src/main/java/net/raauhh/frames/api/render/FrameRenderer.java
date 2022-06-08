@@ -34,4 +34,11 @@ public interface FrameRenderer {
    */
   void renderPart(Player player, FramePart part, Location location, BlockFace facing);
 
+  default void hide(Player player, Frame frame) {
+    for (FramePart part : frame.getParts()) {
+      hide(player, part);
+    }
+  }
+
+  void hide(Player player, FramePart part);
 }

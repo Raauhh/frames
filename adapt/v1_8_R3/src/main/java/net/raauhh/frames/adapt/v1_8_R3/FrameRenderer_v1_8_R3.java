@@ -68,4 +68,12 @@ public class FrameRenderer_v1_8_R3 implements FrameRenderer {
         map
     );
   }
+
+  @Override
+  public void hide(Player player, FramePart part) {
+    packetSender.sendPackets(
+        player,
+        new PacketPlayOutEntityDestroy(part.getId())
+    );
+  }
 }

@@ -11,17 +11,9 @@ import net.raauhh.frames.api.view.FrameView;
 public class FrameEntityTrackerEntry extends EntityTrackerEntry {
 
   private static final Entity DUMMY = new Entity(null) {
-    @Override
-    protected void h() {
-    }
-
-    @Override
-    protected void a(NBTTagCompound nbtTagCompound) {
-    }
-
-    @Override
-    protected void b(NBTTagCompound nbtTagCompound) {
-    }
+    @Override protected void h() {}
+    @Override protected void a(NBTTagCompound nbtTagCompound) {}
+    @Override protected void b(NBTTagCompound nbtTagCompound) {}
   };
 
   private final FrameView view;

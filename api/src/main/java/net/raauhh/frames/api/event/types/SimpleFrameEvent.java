@@ -4,12 +4,12 @@ import net.raauhh.frames.api.view.FrameView;
 import net.raauhh.frames.api.event.FrameEvent;
 import org.bukkit.entity.Player;
 
-public class SimpleFrameViewEvent implements FrameEvent {
+public class SimpleFrameEvent implements FrameEvent {
 
   private final Player player;
   private final FrameView view;
 
-  public SimpleFrameViewEvent(Player player, FrameView view) {
+  public SimpleFrameEvent(Player player, FrameView view) {
     this.player = player;
     this.view = view;
   }

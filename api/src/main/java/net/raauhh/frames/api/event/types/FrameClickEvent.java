@@ -3,11 +3,11 @@ package net.raauhh.frames.api.event.types;
 import net.raauhh.frames.api.view.FrameView;
 import org.bukkit.entity.Player;
 
-public class FrameViewClickEvent extends SimpleFrameViewEvent {
+public class FrameClickEvent extends SimpleFrameEvent {
 
   private final Action action;
 
-  public FrameViewClickEvent(
+  public FrameClickEvent(
       Player player,
       FrameView view,
       Action action

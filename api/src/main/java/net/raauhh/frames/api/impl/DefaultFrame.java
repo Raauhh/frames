@@ -22,4 +22,5 @@ public class DefaultFrame implements Frame {
   public FramePart[] getParts() {
     return parts;
   }
+
 }

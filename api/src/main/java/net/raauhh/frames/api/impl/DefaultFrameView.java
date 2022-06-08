@@ -1,20 +1,24 @@
 package net.raauhh.frames.api.impl;
 
-import com.google.common.collect.Sets;
 import net.raauhh.frames.api.Frame;
 import net.raauhh.frames.api.view.FrameView;
-
-import java.util.Collection;
-import java.util.Set;
-import java.util.UUID;
+import org.bukkit.Location;
+import org.bukkit.block.BlockFace;
 
 public class DefaultFrameView implements FrameView {
 
   private final Frame frame;
-  private final Set<UUID> viewers = Sets.newHashSet();
+  private final Location location;
+  private final BlockFace facing;
 
-  public DefaultFrameView(Frame frame) {
+  public DefaultFrameView(
+      Frame frame,
+      Location location,
+      BlockFace facing
+  ) {
     this.frame = frame;
+    this.location = location;
+    this.facing = facing;
   }
 
   @Override
@@ -23,7 +27,12 @@ public class DefaultFrameView implements FrameView {
   }
 
   @Override
-  public Collection<UUID> getViewers() {
-    return viewers;
+  public Location getLocation() {
+    return location;
+  }
+
+  @Override
+  public BlockFace getFacing() {
+    return facing;
   }
 }

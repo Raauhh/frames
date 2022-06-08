@@ -2,10 +2,14 @@ package net.raauhh.frames;
 
 import net.raauhh.frames.adapt.v1_8_R3.FrameRenderer_v1_8_R3;
 import net.raauhh.frames.adapt.v1_8_R3.PacketSender_v1_8_R3;
+import net.raauhh.frames.adapt.v1_8_R3.view.FrameViewRegistry_v1_8_R3;
 import net.raauhh.frames.api.Frame;
 import net.raauhh.frames.api.FrameManager;
-import net.raauhh.frames.api.render.FrameRenderer;
 import net.raauhh.frames.api.impl.DefaultFrameManager;
+import net.raauhh.frames.api.impl.DefaultFrameView;
+import net.raauhh.frames.api.render.FrameRenderer;
+import net.raauhh.frames.api.view.FrameView;
+import net.raauhh.frames.api.view.FrameViewRegistry;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -23,7 +27,7 @@ import java.util.Set;
 
 public class FramesPlugin extends JavaPlugin implements Listener {
 
-  private FrameRenderer frameRenderer;
+  private FrameViewRegistry frameViewRegistry;
   private Frame frame;
 
   @Override
@@ -37,11 +41,12 @@ public class FramesPlugin extends JavaPlugin implements Listener {
       URL url = new URL("https://i.imgur.com/PodlzEd.png");
       BufferedImage bufferedImage = ImageIO.read(url);
 
-      FrameManager frameManager = new DefaultFrameManager();
-      frameRenderer = new FrameRenderer_v1_8_R3(
+      FrameRenderer frameRenderer = new FrameRenderer_v1_8_R3(
           new PacketSender_v1_8_R3()
       );
+      frameViewRegistry = new FrameViewRegistry_v1_8_R3(frameRenderer);
 
+      FrameManager frameManager = new DefaultFrameManager();
       frame = frameManager.create(
           "test",
           bufferedImage,
@@ -74,12 +79,13 @@ public class FramesPlugin extends JavaPlugin implements Listener {
       return;
     }
 
-    frameRenderer.renderFrame(
-        player,
+    FrameView view = new DefaultFrameView(
         frame,
         block.getLocation(),
         face
     );
+
+    frameViewRegistry.register(player, view);
   }
 
   public BlockFace getBlockFace(Player player) {

@@ -57,6 +57,9 @@ public class FrameViewRegistry_v1_8_R3 implements FrameViewRegistry {
 
   @Override
   public Collection<FrameView> getViews() {
-    return entries.values().stream().map(FrameEntityTrackerEntry::getView).collect(Collectors.toSet());
+    return entries.values()
+        .stream()
+        .map(FrameEntityTrackerEntry::getView)
+        .collect(Collectors.toSet());
   }
 }

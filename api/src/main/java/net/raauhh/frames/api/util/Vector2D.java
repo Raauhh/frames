@@ -14,15 +14,17 @@ public class Vector2D {
   }
 
   public void apply(Location location, BlockFace facing) {
-    location.setY(location.getY() - y);
+    location.setY(location.getY() - y + 0.5);
     if (facing.name().startsWith("NORTH")) {
-      location.setX(location.getX() - x);
+      location.setX(location.getX() - x + 0.5);
     } else if (facing.name().startsWith("SOUTH")) {
-      location.setX(location.getX() + x);
+      location.setX(location.getX() + x + 0.5);
+      location.setZ(location.getZ() + 0.5);
     } else if (facing.name().startsWith("EAST")) {
-      location.setZ(location.getZ() - x);
+      location.setZ(location.getZ() - x + 0.5);
+      location.setX(location.getX() + 0.5);
     } else if (facing.name().startsWith("WEST")) {
-      location.setZ(location.getZ() + x);
+      location.setZ(location.getZ() + x + 0.5);
     }
   }
 

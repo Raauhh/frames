@@ -2,7 +2,7 @@ package net.raauhh.frames.api.impl;
 
 import com.google.common.collect.Sets;
 import net.raauhh.frames.api.Frame;
-import net.raauhh.frames.api.FrameView;
+import net.raauhh.frames.api.view.FrameView;
 
 import java.util.Collection;
 import java.util.Set;

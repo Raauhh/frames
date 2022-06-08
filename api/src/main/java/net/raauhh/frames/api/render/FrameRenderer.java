@@ -1,5 +1,7 @@
-package net.raauhh.frames.api;
+package net.raauhh.frames.api.render;
 
+import net.raauhh.frames.api.Frame;
+import net.raauhh.frames.api.FramePart;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;

@@ -2,7 +2,7 @@ package net.raauhh.frames.adapt.v1_8_R3;
 
 import net.minecraft.server.v1_8_R3.*;
 import net.raauhh.frames.api.FramePart;
-import net.raauhh.frames.api.FrameRenderer;
+import net.raauhh.frames.api.render.FrameRenderer;
 import net.raauhh.frames.api.util.PacketSender;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;

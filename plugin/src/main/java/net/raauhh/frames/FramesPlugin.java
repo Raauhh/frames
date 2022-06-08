@@ -4,7 +4,7 @@ import net.raauhh.frames.adapt.v1_8_R3.FrameRenderer_v1_8_R3;
 import net.raauhh.frames.adapt.v1_8_R3.PacketSender_v1_8_R3;
 import net.raauhh.frames.api.Frame;
 import net.raauhh.frames.api.FrameManager;
-import net.raauhh.frames.api.FrameRenderer;
+import net.raauhh.frames.api.render.FrameRenderer;
 import net.raauhh.frames.api.impl.DefaultFrameManager;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

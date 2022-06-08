@@ -1,11 +1,11 @@
 package net.raauhh.frames.api.view;
 
-import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 public interface FrameViewRegistry {
 
-  boolean register(FrameView view, Location location);
+  boolean register(Player player, FrameView view);
 
-  boolean unregister(FrameView view);
+  boolean unregister(Player player);
 
 }

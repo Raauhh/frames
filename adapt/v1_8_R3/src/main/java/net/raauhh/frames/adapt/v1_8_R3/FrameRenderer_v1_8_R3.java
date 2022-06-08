@@ -41,7 +41,8 @@ public class FrameRenderer_v1_8_R3 implements FrameRenderer {
 
     Packet<?> spawn = new PacketPlayOutSpawnEntity(
         itemFrame,
-        71 // respective id of item frame
+        71, // respective id of item frame,
+        itemFrame.direction.b() // direction of hitbox
     );
 
     Packet<?> metadata = new PacketPlayOutEntityMetadata(
